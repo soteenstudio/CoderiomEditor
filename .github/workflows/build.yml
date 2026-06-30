@@ -3,6 +3,16 @@ name: Build Android APK (Capacitor)
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build Type'
+        required: true
+        default: 'debug'
+        type: choice
+        options:
+        - debug
+        - release
 
 jobs:
   build:
@@ -16,19 +26,18 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '22'
-        cache: 'npm' # Otomatis nge-cache folder global (.npm) berdasarkan package-lock.json
+        cache: 'npm'
 
     - name: Setup Java JDK & Cache Gradle Core
       uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
         java-version: '21'
-        cache: 'gradle' # Otomatis nge-cache metadata & core dari Gradle wrapper
+        cache: 'gradle'
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    # Kunci penghematan: Cache dependensi Gradle (library Android yang didownload)
     - name: Cache Gradle Dependencies
       uses: actions/cache@v4
       with:
@@ -40,7 +49,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
 
-    # Cache folder node_modules biar "npm install" tinggal skip kalo gak ada package baru
     - name: Cache Node Modules
       uses: actions/cache@v4
       with:
@@ -50,19 +58,24 @@ jobs:
           ${{ runner.os }}-node-
 
     - name: Install Dependencies
-      run: npm ci # Pake 'npm ci' lebih cepet & konsisten buat environment CI/CD dibanding 'npm install'
+      run: npm ci
 
     - name: Sync Capacitor
       run: npx cap sync android
 
-    - name: Build APK (Debug)
+    # BAGIAN PENTING: Dibuat dinamis sesuai pilihan di dispatch
+    - name: Build APK
       run: |
         cd android
-        ./gradlew assembleDebug
+        if [ "${{ github.event.inputs.build_type || 'debug' }}" == "release" ]; then
+          ./gradlew assembleRelease
+        else
+          ./gradlew assembleDebug
+        fi
 
     - name: Upload APK Result
       uses: actions/upload-artifact@v4
       with:
-        name: RedDeadEditor-Debug # Biar namanya keren sesuai project lo
-        path: android/app/build/outputs/apk/debug/app-debug.apk
-        compression-level: 0 # Meminimalkan enkapsulasi zip berlebih untuk file tunggal
+        name: RedDeadEditor-${{ github.event.inputs.build_type || 'debug' }}
+        path: android/app/build/outputs/apk/${{ github.event.inputs.build_type || 'debug' }}/app-${{ github.event.inputs.build_type || 'debug' }}.apk
+        compression-level: 0
