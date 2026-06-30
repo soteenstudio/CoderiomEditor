@@ -10,5 +10,6 @@
   "new-folder": "Buat file folder",
   "button:delete-confirm": "Hapus",
   "button:cancel-confirm": "Batal",
-  "button:ok-confirm": "OK"
+  "button:ok-confirm": "OK",
+  "title:explorer": "Penjelajah"
 }

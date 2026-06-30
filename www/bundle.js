@@ -38618,6 +38618,10 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
         type: String,
         default: "Modal"
       },
+      placeholder: {
+        type: String,
+        default: "placeholder"
+      },
       message: {
         type: String,
         default: ""
@@ -38839,36 +38843,43 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
         modalState,
         showModal,
         triggerCreate,
-        handleConfirm
+        handleConfirm,
+        t: t3
       };
     }
   };
 
   // sfc-template:/data/data/com.termux/files/home/RedDeadEdtior/src/components/Sidebar.vue?type=template
   var _hoisted_13 = { class: "sidebar-wrapper" };
-  var _hoisted_23 = { class: "sidebar" };
-  var _hoisted_32 = { class: "sidebar-header" };
-  var _hoisted_42 = { class: "sidebar-actions" };
-  var _hoisted_5 = { class: "tree-container" };
-  var _hoisted_6 = {
+  var _hoisted_23 = { class: "activity-bar" };
+  var _hoisted_32 = {
+    class: "activity-item active",
+    title: "Explorer"
+  };
+  var _hoisted_42 = { class: "act-icon" };
+  var _hoisted_5 = {
+    class: "activity-item",
+    title: "Addons"
+  };
+  var _hoisted_6 = { class: "act-icon" };
+  var _hoisted_7 = { class: "sidebar" };
+  var _hoisted_8 = { class: "sidebar-header" };
+  var _hoisted_9 = { class: "sidebar-actions" };
+  var _hoisted_10 = { class: "tree-container" };
+  var _hoisted_11 = {
     key: 0,
     class: "folder-group"
   };
-  var _hoisted_7 = ["onClick"];
-  var _hoisted_8 = { class: "item-info" };
-  var _hoisted_9 = { class: "icon" };
-  var _hoisted_10 = { class: "name" };
-  var _hoisted_11 = ["onClick"];
-  var _hoisted_122 = {
+  var _hoisted_122 = ["onClick"];
+  var _hoisted_132 = { class: "item-info" };
+  var _hoisted_14 = { class: "icon" };
+  var _hoisted_15 = { class: "name" };
+  var _hoisted_16 = ["onClick"];
+  var _hoisted_17 = {
     key: 0,
     class: "folder-children",
     style: { "padding-left": "15px" }
   };
-  var _hoisted_132 = ["onClick"];
-  var _hoisted_14 = { class: "item-info" };
-  var _hoisted_15 = { class: "icon" };
-  var _hoisted_16 = { class: "name" };
-  var _hoisted_17 = ["onClick"];
   var _hoisted_18 = ["onClick"];
   var _hoisted_19 = { class: "item-info" };
   var _hoisted_20 = { class: "icon" };
@@ -38879,30 +38890,48 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   var _hoisted_25 = { class: "icon" };
   var _hoisted_26 = { class: "name" };
   var _hoisted_27 = ["onClick"];
+  var _hoisted_28 = ["onClick"];
+  var _hoisted_29 = { class: "item-info" };
+  var _hoisted_30 = { class: "icon" };
+  var _hoisted_31 = { class: "name" };
+  var _hoisted_322 = ["onClick"];
   function render4(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
     const _component_ContextMenu = resolveComponent("ContextMenu");
     const _component_Modal = resolveComponent("Modal");
     return openBlock(), createElementBlock("div", _hoisted_13, [
       createCommentVNode(" Activity Bar "),
-      _cache[7] || (_cache[7] = createStaticVNode('<div class="activity-bar" data-v-217863a4><div class="activity-item active" title="Explorer" data-v-217863a4><span class="act-icon" data-v-217863a4>\u{1F4C1}</span></div><div class="activity-item" title="Search" data-v-217863a4><span class="act-icon" data-v-217863a4>\u{1F50D}</span></div><div class="activity-item" title="Source Control" data-v-217863a4><span class="act-icon" data-v-217863a4>\u{1F33F}</span></div><div class="activity-item" title="Extensions" data-v-217863a4><span class="act-icon" data-v-217863a4>\u{1F9E9}</span></div></div>', 1)),
-      createCommentVNode(" Container Utama Explorer "),
-      createBaseVNode("aside", _hoisted_23, [
+      createBaseVNode("div", _hoisted_23, [
         createBaseVNode("div", _hoisted_32, [
-          _cache[6] || (_cache[6] = createBaseVNode(
+          createBaseVNode("span", _hoisted_42, [
+            createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-folder" })
+          ])
+        ]),
+        createBaseVNode("div", _hoisted_5, [
+          createBaseVNode("span", _hoisted_6, [
+            createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-plug" })
+          ])
+        ])
+      ]),
+      createCommentVNode(" Container Utama Explorer "),
+      createBaseVNode("aside", _hoisted_7, [
+        createBaseVNode("div", _hoisted_8, [
+          createBaseVNode(
             "span",
             null,
-            "EXPLORER: REDDEAD",
-            -1
-            /* CACHED */
-          )),
+            toDisplayString($setup.t("title:explorer")),
+            1
+            /* TEXT */
+          ),
           createBaseVNode("button", {
             class: "close-btn",
             title: "Tutup Sidebar",
             onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("toggle-sidebar"))
-          }, " \u2315 ")
+          }, [
+            createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-xmark" })
+          ])
         ]),
-        createBaseVNode("div", _hoisted_42, [
+        createBaseVNode("div", _hoisted_9, [
           createBaseVNode("button", {
             onClick: _cache[1] || (_cache[1] = ($event) => $setup.triggerCreate("file"))
           }, [
@@ -38918,7 +38947,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
           class: "file-tree",
           onClick: _cache[3] || (_cache[3] = withModifiers(($event) => $setup.selectedFolder = "", ["self"]))
         }, [
-          createBaseVNode("div", _hoisted_5, [
+          createBaseVNode("div", _hoisted_10, [
             (openBlock(true), createElementBlock(
               Fragment,
               null,
@@ -38928,20 +38957,20 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                   class: "tree-item"
                 }, [
                   createCommentVNode(" Render Folder Root "),
-                  item.type === "directory" ? (openBlock(), createElementBlock("div", _hoisted_6, [
+                  item.type === "directory" ? (openBlock(), createElementBlock("div", _hoisted_11, [
                     createBaseVNode("div", {
                       class: normalizeClass(["item-folder row-item", { "folder-selected": item.id === $setup.selectedFolder }]),
                       onClick: withModifiers(($event) => $setup.clickFolder(item.id), ["stop"])
                     }, [
-                      createBaseVNode("div", _hoisted_8, [
-                        createBaseVNode("span", _hoisted_9, [
+                      createBaseVNode("div", _hoisted_132, [
+                        createBaseVNode("span", _hoisted_14, [
                           createVNode(_component_font_awesome_icon, {
                             icon: $setup.isFolderOpen(item.id) ? "folder-open" : "folder"
                           }, null, 8, ["icon"])
                         ]),
                         createBaseVNode(
                           "span",
-                          _hoisted_10,
+                          _hoisted_15,
                           toDisplayString(item.name),
                           1
                           /* TEXT */
@@ -38950,10 +38979,10 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                       createBaseVNode("button", {
                         class: "menu-trigger",
                         onClick: withModifiers(($event) => $setup.openMenu(item), ["stop"])
-                      }, " \u22EE ", 8, _hoisted_11)
-                    ], 10, _hoisted_7),
+                      }, " \u22EE ", 8, _hoisted_16)
+                    ], 10, _hoisted_122),
                     createCommentVNode(" Render Anak di dalam Folder "),
-                    $setup.isFolderOpen(item.id) && item.children ? (openBlock(), createElementBlock("div", _hoisted_122, [
+                    $setup.isFolderOpen(item.id) && item.children ? (openBlock(), createElementBlock("div", _hoisted_17, [
                       (openBlock(true), createElementBlock(
                         Fragment,
                         null,
@@ -38967,15 +38996,15 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                               class: normalizeClass(["item-folder row-item", { "folder-selected": child.id === $setup.selectedFolder }]),
                               onClick: withModifiers(($event) => $setup.clickFolder(child.id), ["stop"])
                             }, [
-                              createBaseVNode("div", _hoisted_14, [
-                                createBaseVNode("span", _hoisted_15, [
+                              createBaseVNode("div", _hoisted_19, [
+                                createBaseVNode("span", _hoisted_20, [
                                   createVNode(_component_font_awesome_icon, {
                                     icon: $setup.isFolderOpen(item.id) ? "folder-open" : "folder"
                                   }, null, 8, ["icon"])
                                 ]),
                                 createBaseVNode(
                                   "span",
-                                  _hoisted_16,
+                                  _hoisted_21,
                                   toDisplayString(child.name),
                                   1
                                   /* TEXT */
@@ -38984,8 +39013,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                               createBaseVNode("button", {
                                 class: "menu-trigger",
                                 onClick: withModifiers(($event) => $setup.openMenu(child), ["stop"])
-                              }, " \u22EE ", 8, _hoisted_17)
-                            ], 10, _hoisted_132)) : (openBlock(), createElementBlock(
+                              }, " \u22EE ", 8, _hoisted_222)
+                            ], 10, _hoisted_18)) : (openBlock(), createElementBlock(
                               Fragment,
                               { key: 1 },
                               [
@@ -38994,13 +39023,13 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                                   class: normalizeClass(["item-file row-item", { active: child.id === $props.activeId }]),
                                   onClick: withModifiers(($event) => _ctx.$emit("select-file", child.id), ["stop"])
                                 }, [
-                                  createBaseVNode("div", _hoisted_19, [
-                                    createBaseVNode("span", _hoisted_20, [
+                                  createBaseVNode("div", _hoisted_24, [
+                                    createBaseVNode("span", _hoisted_25, [
                                       createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-file-code" })
                                     ]),
                                     createBaseVNode(
                                       "span",
-                                      _hoisted_21,
+                                      _hoisted_26,
                                       toDisplayString(child.name),
                                       1
                                       /* TEXT */
@@ -39009,8 +39038,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                                   createBaseVNode("button", {
                                     class: "menu-trigger",
                                     onClick: withModifiers(($event) => $setup.openMenu(child), ["stop"])
-                                  }, " \u22EE ", 8, _hoisted_222)
-                                ], 10, _hoisted_18)
+                                  }, " \u22EE ", 8, _hoisted_27)
+                                ], 10, _hoisted_232)
                               ],
                               2112
                               /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
@@ -39030,13 +39059,13 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                         class: normalizeClass(["item-file row-item", { active: item.id === $props.activeId }]),
                         onClick: withModifiers(($event) => _ctx.$emit("select-file", item.id), ["stop"])
                       }, [
-                        createBaseVNode("div", _hoisted_24, [
-                          createBaseVNode("span", _hoisted_25, [
+                        createBaseVNode("div", _hoisted_29, [
+                          createBaseVNode("span", _hoisted_30, [
                             createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-file-code" })
                           ]),
                           createBaseVNode(
                             "span",
-                            _hoisted_26,
+                            _hoisted_31,
                             toDisplayString(item.name),
                             1
                             /* TEXT */
@@ -39045,8 +39074,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                         createBaseVNode("button", {
                           class: "menu-trigger",
                           onClick: withModifiers(($event) => $setup.openMenu(item), ["stop"])
-                        }, " \u22EE ", 8, _hoisted_27)
-                      ], 10, _hoisted_232)
+                        }, " \u22EE ", 8, _hoisted_322)
+                      ], 10, _hoisted_28)
                     ],
                     2112
                     /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
@@ -39233,7 +39262,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
     "new-folder": "Buat file folder",
     "button:delete-confirm": "Hapus",
     "button:cancel-confirm": "Batal",
-    "button:ok-confirm": "OK"
+    "button:ok-confirm": "OK",
+    "title:explorer": "Penjelajah"
   };
 
   // src/i18n/locales/en-us.json
@@ -39249,7 +39279,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
     "new-folder": "Create new folder",
     "button:delete-confirm": "Delete",
     "button:cancel-confirm": "Cancel",
-    "button:ok-confirm": "OK"
+    "button:ok-confirm": "OK",
+    "title:explorer": "Explorer"
   };
 
   // src/i18n/index.js
@@ -43381,10 +43412,20 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
     iconName: "folder",
     icon: [512, 512, [128193, 128447, 61716, "folder-blank"], "f07b", "M64 448l384 0c35.3 0 64-28.7 64-64l0-240c0-35.3-28.7-64-64-64L298.7 80c-6.9 0-13.7-2.2-19.2-6.4L241.1 44.8C230 36.5 216.5 32 202.7 32L64 32C28.7 32 0 60.7 0 96L0 384c0 35.3 28.7 64 64 64z"]
   };
+  var faXmark = {
+    prefix: "fas",
+    iconName: "xmark",
+    icon: [384, 512, [128473, 10005, 10006, 10060, 215, "close", "multiply", "remove", "times"], "f00d", "M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"]
+  };
   var faPen = {
     prefix: "fas",
     iconName: "pen",
     icon: [512, 512, [128394], "f304", "M352.9 21.2L308 66.1 445.9 204 490.8 159.1C504.4 145.6 512 127.2 512 108s-7.6-37.6-21.2-51.1L455.1 21.2C441.6 7.6 423.2 0 404 0s-37.6 7.6-51.1 21.2zM274.1 100L58.9 315.1c-10.7 10.7-18.5 24.1-22.6 38.7L.9 481.6c-2.3 8.3 0 17.3 6.2 23.4s15.1 8.5 23.4 6.2l127.8-35.5c14.6-4.1 27.9-11.8 38.7-22.6L412 237.9 274.1 100z"]
+  };
+  var faPlug = {
+    prefix: "fas",
+    iconName: "plug",
+    icon: [448, 512, [128268], "f1e6", "M128-32c17.7 0 32 14.3 32 32l0 96 128 0 0-96c0-17.7 14.3-32 32-32s32 14.3 32 32l0 96 64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 64c0 95.1-69.2 174.1-160 189.3l0 66.7c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-66.7C101.2 398.1 32 319.1 32 224l0-64c-17.7 0-32-14.3-32-32S14.3 96 32 96l64 0 0-96c0-17.7 14.3-32 32-32z"]
   };
   var faFolderPlus = {
     prefix: "fas",
@@ -43404,6 +43445,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
 
   // src/main.js
   library$1.add(
+    faXmark,
     faPen,
     faTrash,
     faBars,
@@ -43412,7 +43454,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
     faFolderOpen,
     faFolder,
     faFileCirclePlus,
-    faFolderPlus
+    faFolderPlus,
+    faPlug
   );
   var app = createApp(App_default2);
   app.use(i18n_default);

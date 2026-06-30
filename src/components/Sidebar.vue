@@ -4,29 +4,27 @@
     <!-- Activity Bar -->
     <div class="activity-bar">
       <div class="activity-item active" title="Explorer">
-        <span class="act-icon">📁</span>
+        <span class="act-icon">
+          <font-awesome-icon icon="fa-solid fa-folder" />
+        </span>
       </div>
-      <div class="activity-item" title="Search">
-        <span class="act-icon">🔍</span>
-      </div>
-      <div class="activity-item" title="Source Control">
-        <span class="act-icon">🌿</span>
-      </div>
-      <div class="activity-item" title="Extensions">
-        <span class="act-icon">🧩</span>
+      <div class="activity-item" title="Addons">
+        <span class="act-icon">
+          <font-awesome-icon icon="fa-solid fa-plug" />
+        </span>
       </div>
     </div>
 
     <!-- Container Utama Explorer -->
     <aside class="sidebar">
       <div class="sidebar-header">
-        <span>EXPLORER: REDDEAD</span>
+        <span>{{ t('title:explorer') }}</span>
         <button
           class="close-btn"
           title="Tutup Sidebar"
           @click="$emit('toggle-sidebar')"
         >
-          ⌕
+          <font-awesome-icon icon="fa-solid fa-xmark" />
         </button>
       </div>
 
@@ -295,6 +293,7 @@ export default {
       showModal,
       triggerCreate,
       handleConfirm,
+      t,
     };
   },
 };
