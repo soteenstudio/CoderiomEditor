@@ -7,6 +7,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import {
+  faXmark,
   faPen,
   faTrash,
   faBars,
@@ -16,9 +17,11 @@ import {
   faFolder,
   faFileCirclePlus,
   faFolderPlus,
+  faPlug,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
+  faXmark,
   faPen,
   faTrash,
   faBars,
@@ -27,7 +30,8 @@ library.add(
   faFolderOpen,
   faFolder,
   faFileCirclePlus,
-  faFolderPlus
+  faFolderPlus,
+  faPlug,
 );
 
 const app = createApp(App);
