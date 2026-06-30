@@ -38637,7 +38637,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
         internalValue.value = "";
         emit2("close");
       };
-      return { handleAction, internalValue };
+      return { handleAction, internalValue, t: t3 };
     }
   };
 
@@ -38697,7 +38697,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
               class: "menu-item secondary",
               onClick: _cache[1] || (_cache[1] = ($event) => $setup.handleAction("cancel"))
             },
-            toDisplayString(_ctx.t("button:cancel-confirm")),
+            toDisplayString($setup.t("button:cancel-confirm")),
             1
             /* TEXT */
           )) : createCommentVNode("v-if", true),
@@ -38707,7 +38707,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
               class: normalizeClass(["menu-item", $props.type === "confirm" ? "delete" : "primary"]),
               onClick: _cache[2] || (_cache[2] = ($event) => $setup.handleAction("ok"))
             },
-            toDisplayString($props.type === "confirm" ? _ctx.t("button:delete-confirm") : _ctx.t("button:ok-confirm")),
+            toDisplayString($props.type === "confirm" ? $setup.t("button:delete-confirm") : $setup.t("button:ok-confirm")),
             3
             /* TEXT, CLASS */
           )
@@ -39231,8 +39231,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
     "button:delete": "Hapus",
     "new-file": "Buat file baru",
     "new-folder": "Buat file folder",
-    "button:delete-confirm": "Delete",
-    "button:cancel-confirm": "Cancel",
+    "button:delete-confirm": "Hapus",
+    "button:cancel-confirm": "Batal",
     "button:ok-confirm": "OK"
   };
 

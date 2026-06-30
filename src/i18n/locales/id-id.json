@@ -8,7 +8,7 @@
   "button:delete": "Hapus",
   "new-file": "Buat file baru",
   "new-folder": "Buat file folder",
-  "button:delete-confirm": "Delete",
-  "button:cancel-confirm": "Cancel",
+  "button:delete-confirm": "Hapus",
+  "button:cancel-confirm": "Batal",
   "button:ok-confirm": "OK"
 }
