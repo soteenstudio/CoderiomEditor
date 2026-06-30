@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">RedDeadEditor</string>
+    <string name="title_activity_main">RedDeadEditor</string>
+    <string name="package_name">com.soteenstudio.reddeadeditor</string>
+    <string name="custom_url_scheme">com.soteenstudio.reddeadeditor</string>
+</resources>
