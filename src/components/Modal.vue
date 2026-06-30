@@ -51,6 +51,10 @@ export default {
       type: String,
       default: 'Modal',
     },
+    placeholder: {
+      type: String,
+      default: 'placeholder',
+    },
     message: {
       type: String,
       default: '',
@@ -70,7 +74,7 @@ export default {
       internalValue.value = '';
       emit('close');
     };
-    return { handleAction, internalValue };
+    return { handleAction, internalValue, t };
   },
 };
 </script>
