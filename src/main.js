@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import i18n from './i18n';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -31,6 +32,6 @@ library.add(
 
 const app = createApp(App);
 
+app.use(i18n);
 app.component('FontAwesomeIcon', FontAwesomeIcon);
-
 app.mount('#app');

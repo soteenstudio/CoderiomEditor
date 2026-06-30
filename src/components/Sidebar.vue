@@ -136,6 +136,7 @@
 
     <!-- Panggil Komponen Reusable Context Menu -->
     <ContextMenu
+      v-if="menuState.show"
       :show="menuState.show"
       :title="menuState.targetItem ? menuState.targetItem.name : 'Unknown'"
       :options="menuOptions"
@@ -157,6 +158,7 @@
 
 <script>
 import { ref, reactive } from 'vue';
+import { useI18n } from 'vue-i18n';
 import ContextMenu from './ContextMenu.vue';
 import Modal from './Modal.vue';
 
@@ -178,6 +180,7 @@ export default {
   setup(props, { emit }) {
     const openedFolders = ref({});
     const selectedFolder = ref('');
+    const { t } = useI18n();
 
     const currentAction = ref('');
 
@@ -193,10 +196,13 @@ export default {
     };
 
     const triggerCreate = (type) => {
+      const file = t('new-file');
+      const folder = t('new-folder');
+      const title = type === 'file' ? file : folder;
       currentAction.value = type;
       showModal(
         'prompt',
-        `Buat ${type === 'file' ? 'File' : 'Folder'} Baru`,
+        title,
         ''
       );
     };
@@ -248,25 +254,33 @@ export default {
       if (!menuState.targetItem) return;
 
       if (actionType === 'rename') {
+        const item = menuState.targetItem;
+        const title = t('title:rename-filename');
+        const message = t('rename-filename').replace(/\#\[name\]/, item.name);
         currentAction.value = 'rename';
         showModal(
           'prompt',
-          'Rename Item',
-          `Rename ${menuState.targetItem.name} jadi:`
+          title,
+          message
         );
       } else if (actionType === 'delete') {
+        const item = menuState.targetItem;
+        const title = t('title:delete-confirm');
+        const message = t('delete-confirm').replace(/\#\[name\]/, item.name)
         currentAction.value = 'delete';
         showModal(
           'confirm',
-          'Konfirmasi Hapus',
-          `Yakin mau hapus ${menuState.targetItem.name}?`
+          title,
+          message
         );
       }
     };
 
+    const renameBtn = t('button:rename');
+    const deleteBtn = t('button:delete');
     const menuOptions = [
-      { id: 'rename', label: 'Rename', icon: 'pen', danger: false },
-      { id: 'delete', label: 'Delete', icon: 'trash', danger: true },
+      { id: 'rename', label: renameBtn, icon: 'pen', danger: false },
+      { id: 'delete', label: deleteBtn, icon: 'trash', danger: true },
     ];
 
     return {

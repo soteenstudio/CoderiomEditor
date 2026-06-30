@@ -24,14 +24,14 @@
           class="menu-item secondary"
           @click="handleAction('cancel')"
         >
-          Batal
+          {{ t('button:cancel-confirm') }}
         </button>
         <button
           class="menu-item"
           :class="type === 'confirm' ? 'delete' : 'primary'"
           @click="handleAction('ok')"
         >
-          {{ type === 'confirm' ? 'Hapus' : 'OK' }}
+          {{ type === 'confirm' ? t('button:delete-confirm') : t('button:ok-confirm') }}
         </button>
       </div>
     </div>
@@ -40,6 +40,7 @@
 
 <script>
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 export default {
   props: {
     show: {
@@ -61,6 +62,7 @@ export default {
   },
   emits: ['close', 'confirm', 'cancel'],
   setup(props, { emit }) {
+    const { t } = useI18n();
     const internalValue = ref('');
     const handleAction = (action) => {
       if (action === 'ok') emit('confirm', internalValue.value);

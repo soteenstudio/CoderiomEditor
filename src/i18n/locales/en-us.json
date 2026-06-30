@@ -1,0 +1,14 @@
+{
+  "language": "English",
+  "rename-filename": "Rename file #[name] to:",
+  "delete-confirm": "Are you sure want to delete #[name]?",
+  "title:delete-confirm": "Delete file",
+  "title:rename-filename": "Rename file",
+  "button:rename": "Rename",
+  "button:delete": "Delete",
+  "new-file": "Create new file",
+  "new-folder": "Create new folder",
+  "button:delete-confirm": "Delete",
+  "button:cancel-confirm": "Cancel",
+  "button:ok-confirm": "OK"
+}

@@ -1,1 +1,325 @@
-.editor-wrap{width:100vw!important;height:100vh!important;position:relative!important;display:flex!important;flex-direction:row!important;overflow:hidden!important;box-sizing:border-box!important;background-color:#1e1e1e!important}.sidebar-wrapper{display:flex!important;height:100%!important;z-index:10!important;transition:margin-left .15s ease-in-out!important}.sidebar-closed .sidebar-wrapper{margin-left:-250px!important}.activity-bar{width:50px!important;min-width:50px!important;height:100%!important;background-color:#333!important;display:flex!important;flex-direction:column!important;align-items:center!important;padding-top:10px!important;box-sizing:border-box!important;border-right:1px solid #1e1e1e!important}.activity-item{width:100%!important;height:48px!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;opacity:.6!important}.activity-item:hover{opacity:1!important}.activity-item.active{opacity:1!important;border-left:2px solid #007acc!important}.act-icon{font-size:18px!important}.sidebar{width:200px!important;min-width:200px!important;height:100%!important;background-color:#252526!important;display:flex!important;flex-direction:column!important;box-sizing:border-box!important;user-select:none!important;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif!important}.sidebar-header{display:flex!important;justify-content:space-between!important;align-items:center!important;padding:10px 12px!important;font-size:11px!important;font-weight:600!important;color:#bbb!important;letter-spacing:.5px!important}.close-btn{background:none!important;border:none!important;color:#858585!important;font-size:14px!important;cursor:pointer!important}.close-btn:hover{color:#fff!important}.sidebar-actions{display:flex!important;justify-content:flex-end!important;gap:8px!important;padding:4px 14px!important}.sidebar-actions button{background:none!important;border:none!important;color:#858585!important;cursor:pointer!important;font-size:13px!important;padding:2px 4px!important}.sidebar-actions button:hover{color:#fff!important;background-color:#37373d!important;border-radius:3px!important}.file-tree{flex-grow:1!important;overflow-y:auto!important;padding:5px 0!important}.item-folder,.item-file{display:flex!important;align-items:center!important;gap:6px!important;padding:4px 16px!important;cursor:pointer!important;font-size:13px!important;color:#ccc!important}.item-file:hover,.item-folder:hover{background-color:#2a2d2e!important}.item-file.active{background-color:#37373d!important;color:#fff!important;outline:1px solid #007acc!important}.icon{font-size:14px!important}.name{white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}.editor-container{flex:1 1 0%!important;min-width:0!important;height:100%!important;position:relative!important;overflow:hidden!important;background-color:#1e1e1e!important}.cm-editor{font-family:Fira Code,monospace!important;font-size:14px!important;height:100%!important;background-color:#1e1e1e!important}.open-sidebar-btn{position:absolute!important;top:10px!important;left:10px!important;z-index:99!important;background:#333!important;color:#fff!important;border:1px solid #444!important;padding:4px 8px!important;border-radius:3px!important;cursor:pointer!important}.context-overlay[data-v-a87582a9]{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0006;display:flex;justify-content:center;align-items:center;z-index:9999}.context-menu[data-v-a87582a9]{background:#1e1e1e;border:1px solid #454545;box-shadow:0 4px 8px #00000080;border-radius:6px;z-index:9999;min-width:200px;max-width:300px;padding:4px 0}.menu-header[data-v-a87582a9]{padding:10px 16px;font-size:12px;color:#888;border-bottom:1px solid #333;margin-bottom:4px}.menu-item[data-v-a87582a9]{display:flex;align-items:center;gap:8px;padding:8px 12px;color:#ccc;font-size:13px;cursor:pointer}.menu-item[data-v-a87582a9]:hover{background:#2a2d2e;color:#fff}.menu-item.delete[data-v-a87582a9]:hover{background:#a82020;color:#fff}.menu-icon[data-v-a87582a9]{font-size:14px}.context-overlay[data-v-0084ed53]{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0006;display:flex;justify-content:center;align-items:center;z-index:9999}.context-menu[data-v-0084ed53]{background:#1e1e1e;border:1px solid #454545;box-shadow:0 4px 8px #00000080;border-radius:6px;min-width:250px;max-width:300px;padding:4px 0}.menu-header[data-v-0084ed53]{padding:10px 16px;font-size:12px;color:#888;border-bottom:1px solid #333;margin-bottom:4px}.modal-body[data-v-0084ed53]{padding:10px 16px;color:#ccc;font-size:13px}.modal-input[data-v-0084ed53]{width:100%;background:#121212;border:1px solid #454545;color:#fff;padding:8px;border-radius:4px;box-sizing:border-box}.modal-actions[data-v-0084ed53]{display:flex;justify-content:flex-end;padding:8px 12px;gap:8px}.menu-item[data-v-0084ed53]{display:flex;align-items:center;justify-content:center;padding:6px 12px;color:#ccc;font-size:13px;cursor:pointer;border:1px solid #454545;background:#2a2d2e;border-radius:4px}.menu-item[data-v-0084ed53]:hover{color:#fff;background:#3a3d3e}.menu-item.delete[data-v-0084ed53]:hover{background:#a82020;border-color:#a82020}.menu-item.secondary[data-v-0084ed53]{background:#333}.menu-item.primary[data-v-0084ed53]{background:#007acc;border-color:#007acc;color:#fff}.folder-selected[data-v-217863a4]{background-color:#007acc33!important;outline:1px dashed #007acc}.row-item[data-v-217863a4]{display:flex;justify-content:space-between;align-items:center;padding:4px 8px;cursor:pointer}.item-info[data-v-217863a4]{display:flex;align-items:center;gap:6px}.menu-trigger[data-v-217863a4]{background:none;border:none;color:#ccc;cursor:pointer;font-size:14px;opacity:0;padding:0 4px}.row-item:hover .menu-trigger[data-v-217863a4]{opacity:1}
+/* src/assets/daylong-theme.css */
+.editor-wrap {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  background-color: #1e1e1e !important;
+}
+.sidebar-wrapper {
+  display: flex !important;
+  height: 100% !important;
+  z-index: 10 !important;
+  transition: margin-left 0.15s ease-in-out !important;
+}
+.sidebar-closed .sidebar-wrapper {
+  margin-left: -250px !important;
+}
+.activity-bar {
+  width: 50px !important;
+  min-width: 50px !important;
+  height: 100% !important;
+  background-color: #333333 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding-top: 10px !important;
+  box-sizing: border-box !important;
+  border-right: 1px solid #1e1e1e !important;
+}
+.activity-item {
+  width: 100% !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  opacity: 0.6 !important;
+}
+.activity-item:hover {
+  opacity: 1 !important;
+}
+.activity-item.active {
+  opacity: 1 !important;
+  border-left: 2px solid #007acc !important;
+}
+.act-icon {
+  font-size: 18px !important;
+}
+.sidebar {
+  width: 200px !important;
+  min-width: 200px !important;
+  height: 100% !important;
+  background-color: #252526 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif !important;
+}
+.sidebar-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 10px 12px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #bbbbbb !important;
+  letter-spacing: 0.5px !important;
+}
+.close-btn {
+  background: none !important;
+  border: none !important;
+  color: #858585 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+}
+.close-btn:hover {
+  color: #fff !important;
+}
+.sidebar-actions {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 8px !important;
+  padding: 4px 14px !important;
+}
+.sidebar-actions button {
+  background: none !important;
+  border: none !important;
+  color: #858585 !important;
+  cursor: pointer !important;
+  font-size: 13px !important;
+  padding: 2px 4px !important;
+}
+.sidebar-actions button:hover {
+  color: #fff !important;
+  background-color: #37373d !important;
+  border-radius: 3px !important;
+}
+.file-tree {
+  flex-grow: 1 !important;
+  overflow-y: auto !important;
+  padding: 5px 0 !important;
+}
+.item-folder,
+.item-file {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4px 16px !important;
+  cursor: pointer !important;
+  font-size: 13px !important;
+  color: #cccccc !important;
+}
+.item-file:hover,
+.item-folder:hover {
+  background-color: #2a2d2e !important;
+}
+.item-file.active {
+  background-color: #37373d !important;
+  color: #ffffff !important;
+  outline: 1px solid #007acc !important;
+}
+.icon {
+  font-size: 14px !important;
+}
+.name {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+.editor-container {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #1e1e1e !important;
+}
+.cm-editor {
+  font-family: "Fira Code", monospace !important;
+  font-size: 14px !important;
+  height: 100% !important;
+  background-color: #1e1e1e !important;
+}
+.open-sidebar-btn {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  z-index: 99 !important;
+  background: #333333 !important;
+  color: #fff !important;
+  border: 1px solid #444 !important;
+  padding: 4px 8px !important;
+  border-radius: 3px !important;
+  cursor: pointer !important;
+}
+
+/* sfc-style:/data/data/com.termux/files/home/RedDeadEdtior/src/components/ContextMenu.vue?type=style&index=0 */
+.context-overlay[data-v-a87582a9] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.context-menu[data-v-a87582a9] {
+  background: #1e1e1e;
+  border: 1px solid #454545;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  z-index: 9999;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 4px 0;
+}
+.menu-header[data-v-a87582a9] {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #888;
+  border-bottom: 1px solid #333;
+  margin-bottom: 4px;
+}
+.menu-item[data-v-a87582a9] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #cccccc;
+  font-size: 13px;
+  cursor: pointer;
+}
+.menu-item[data-v-a87582a9]:hover {
+  background: #2a2d2e;
+  color: #ffffff;
+}
+.menu-item.delete[data-v-a87582a9]:hover {
+  background: #a82020;
+  color: #ffffff;
+}
+.menu-icon[data-v-a87582a9] {
+  font-size: 14px;
+}
+
+/* sfc-style:/data/data/com.termux/files/home/RedDeadEdtior/src/components/Modal.vue?type=style&index=0 */
+.context-overlay[data-v-0084ed53] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.context-menu[data-v-0084ed53] {
+  background: #1e1e1e;
+  border: 1px solid #454545;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 4px 0;
+}
+.menu-header[data-v-0084ed53] {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #888;
+  border-bottom: 1px solid #333;
+  margin-bottom: 4px;
+}
+.modal-body[data-v-0084ed53] {
+  padding: 10px 16px;
+  color: #cccccc;
+  font-size: 13px;
+}
+.modal-input[data-v-0084ed53] {
+  width: 100%;
+  background: #121212;
+  border: 1px solid #454545;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.modal-actions[data-v-0084ed53] {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px;
+  gap: 8px;
+}
+.menu-item[data-v-0084ed53] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  color: #cccccc;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #454545;
+  background: #2a2d2e;
+  border-radius: 4px;
+}
+.menu-item[data-v-0084ed53]:hover {
+  color: #ffffff;
+  background: #3a3d3e;
+}
+.menu-item.delete[data-v-0084ed53]:hover {
+  background: #a82020;
+  border-color: #a82020;
+}
+.menu-item.secondary[data-v-0084ed53] {
+  background: #333;
+}
+.menu-item.primary[data-v-0084ed53] {
+  background: #007acc;
+  border-color: #007acc;
+  color: white;
+}
+
+/* sfc-style:/data/data/com.termux/files/home/RedDeadEdtior/src/components/Sidebar.vue?type=style&index=0 */
+.folder-selected[data-v-217863a4] {
+  background-color: rgba(0, 122, 204, 0.2) !important;
+  outline: 1px dashed #007acc;
+}
+.row-item[data-v-217863a4] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.item-info[data-v-217863a4] {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.menu-trigger[data-v-217863a4] {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0;
+  padding: 0 4px;
+}
+.row-item:hover .menu-trigger[data-v-217863a4] {
+  opacity: 1;
+}

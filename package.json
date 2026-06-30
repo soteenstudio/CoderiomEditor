@@ -2,7 +2,8 @@
   "type": "module",
   "scripts": {
     "lint": "eslint 'src/**/*.{vue,js}'",
-    "lint:fix": "eslint 'src/**/*.{vue,js}' --fix"
+    "lint:fix": "eslint 'src/**/*.{vue,js}' --fix",
+    "lang": "node ./scripts/language.js"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.1",
@@ -26,7 +27,6 @@
     "esbuild": "^0.28.1",
     "esbuild-plugin-vue3": "^0.5.1",
     "eslint": "^10.6.0",
-    "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-vue": "^10.9.2",
     "prettier": "^3.9.4"
   }

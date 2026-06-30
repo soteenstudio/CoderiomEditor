@@ -14,7 +14,7 @@ async function runBuild() {
         '__VUE_PROD_DEVTOOLS__': 'false',
         '__VUE_PROD_HYDRATION_MISMATCH_DETAILS__': 'false'
       },
-      minify: true,
+      minify: false,
       sourcemap: false,
       target: ['es2020'],
       platform: 'browser',

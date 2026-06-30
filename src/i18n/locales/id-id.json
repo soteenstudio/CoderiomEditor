@@ -1,0 +1,14 @@
+{
+  "language": "English",
+  "rename-filename": "Ubah nama file #[name] menjadi:",
+  "delete-confirm": "Anda yakin ingin menghapus #[name]?",
+  "title:delete-confirm": "Hapus file",
+  "title:rename-filename": "Ubah nama file",
+  "button:rename": "Ubah nama",
+  "button:delete": "Hapus",
+  "new-file": "Buat file baru",
+  "new-folder": "Buat file folder",
+  "button:delete-confirm": "Delete",
+  "button:cancel-confirm": "Cancel",
+  "button:ok-confirm": "OK"
+}
