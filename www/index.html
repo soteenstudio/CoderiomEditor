@@ -1,1 +1,24 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Axor.js Application</title></head><body style="margin:0;padding:0;"><script>document.addEventListener("DOMContentLoaded", () => {function Route_Root(){window.axor_reactiveBindings||(window.axor_reactiveBindings=[]),window.axor_triggerUpdate||(window.axor_triggerUpdate=()=>{Array.isArray(window.axor_reactiveBindings)&&window.axor_reactiveBindings.forEach(o=>{try{o()}catch{}})});const e=document.createElement("h1"),t={},n=document.createTextNode("Hello");return e.appendChild(n),e}const routes={"/":Route_Root};function Fi(e){return e?`const evs = new EventSource('/live-reload');evs.onmessage = (e) => {if (e.data === 'reload') {console.log('%c\u26A1 HMR', 'color: #38bdf8; font-weight: bold;', 'Application reloaded successfully.');window.location.reload();}};`:""}function navigateSPA(e){window.history.pushState({},"",e),handleSPARouting()}function handleSPARouting(){const e=window.location.pathname||"/",t=document.getElementById("axor-app")||document.body,n=routes[e]||routes["/"];if(n){const o=n();o!==document.body?(t.innerHTML="",t.appendChild(o)):console.log("axor:body detected, skipping manual append.")}}document.addEventListener("click",e=>{const t=e.target.closest("a");t&&t.getAttribute("href")&&t.getAttribute("href").startsWith("/")&&(e.preventDefault(),navigateSPA(t.getAttribute("href")))}),window.addEventListener("popstate",handleSPARouting),window.addEventListener("DOMContentLoaded",()=>{if(!document.getElementById("axor-app")){const e=document.createElement("div");e.id="axor-app",document.body.appendChild(e)}handleSPARouting()});});</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>RedDead Editor</title>
+  <link rel="stylesheet" href="bundle.css">
+  <style>
+    html, body, #app {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #282c34;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="bundle.js"></script>
+</body>
+</html>
