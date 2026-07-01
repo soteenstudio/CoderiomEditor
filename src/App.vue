@@ -1,13 +1,10 @@
 <template>
   <div class="editor-wrap" :class="{ 'sidebar-closed': !isSidebarOpen }">
-    <button
-      v-if="!isSidebarOpen"
-      class="open-sidebar-btn"
-      title="Buka Sidebar"
-      @click="isSidebarOpen = true"
-    >
-      <font-awesome-icon icon="fa-solid fa-bars" />
-    </button>
+    <Navbar
+      :is-sidebar-open="isSidebarOpen"
+      :file-name="currentFileName"
+      @open-sidebar="isSidebarOpen = true"
+    />
 
     <!-- Di bagian template App.vue lo -->
     <Sidebar
@@ -27,20 +24,23 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import './assets/styles/app.scss';
+import './assets/styles/navbar.scss';
+import './assets/styles/sidebar.scss';
+import './assets/styles/editor.scss';
+import { ref, onMounted, computed } from 'vue';
 import { EditorState } from '@codemirror/state';
 import { EditorView, keymap, lineNumbers } from '@codemirror/view';
 import { defaultKeymap, history, historyKeymap } from '@codemirror/commands';
 import { javascript } from '@codemirror/lang-javascript';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
-
-import './assets/daylong-theme.css';
 import { useWorkspace } from './composables/useWorkspace';
+import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
 
 export default {
-  components: { Sidebar },
+  components: { Navbar, Sidebar },
   setup() {
     const editorContainer = ref(null);
     let view = null;
@@ -81,6 +81,11 @@ export default {
       renameItem,
       deleteItem,
     } = useWorkspace(loadFileContent);
+
+    const currentFileName = computed(() => {
+      const activeFile = getActiveFile();
+      return activeFile ? activeFile.name : 'No File Open';
+    });
 
     onMounted(async () => {
       await readWorkspaceStorage();
@@ -124,6 +129,7 @@ export default {
       createNewFolder,
       renameItem,
       deleteItem,
+      currentFileName,
     };
   },
 };

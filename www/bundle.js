@@ -6757,7 +6757,7 @@ If this is a native custom element, make sure to exclude it from component resol
       beforeUnmount,
       destroyed,
       unmounted,
-      render: render8,
+      render: render9,
       renderTracked,
       renderTriggered,
       errorCaptured,
@@ -6911,8 +6911,8 @@ If this is a native custom element, make sure to exclude it from component resol
         instance.exposed = {};
       }
     }
-    if (render8 && instance.render === NOOP) {
-      instance.render = render8;
+    if (render9 && instance.render === NOOP) {
+      instance.render = render9;
     }
     if (inheritAttrs != null) {
       instance.inheritAttrs = inheritAttrs;
@@ -7153,7 +7153,7 @@ If this is a native custom element, make sure to exclude it from component resol
     };
   }
   var uid$1 = 0;
-  function createAppAPI(render8, hydrate2) {
+  function createAppAPI(render9, hydrate2) {
     return function createApp2(rootComponent, rootProps = null) {
       if (!isFunction(rootComponent)) {
         rootComponent = extend({}, rootComponent);
@@ -7257,13 +7257,13 @@ If this is a native custom element, make sure to exclude it from component resol
               context.reload = () => {
                 const cloned = cloneVNode(vnode);
                 cloned.el = null;
-                render8(cloned, rootContainer, namespace2);
+                render9(cloned, rootContainer, namespace2);
               };
             }
             if (isHydrate && hydrate2) {
               hydrate2(vnode, rootContainer);
             } else {
-              render8(vnode, rootContainer, namespace2);
+              render9(vnode, rootContainer, namespace2);
             }
             isMounted = true;
             app2._container = rootContainer;
@@ -7295,7 +7295,7 @@ If you want to remount the same app, move your app creation logic into a factory
               app2._instance,
               16
             );
-            render8(null, app2._container);
+            render9(null, app2._container);
             if (false) {
               app2._instance = null;
               devtoolsUnmountApp(app2);
@@ -7554,7 +7554,7 @@ If you want to remount the same app, move your app creation logic into a factory
       slots,
       attrs: attrs2,
       emit: emit2,
-      render: render8,
+      render: render9,
       renderCache,
       props,
       data,
@@ -7582,7 +7582,7 @@ If you want to remount the same app, move your app creation logic into a factory
           }
         }) : proxyToUse;
         result = normalizeVNode(
-          render8.call(
+          render9.call(
             thisProxy,
             proxyToUse,
             renderCache,
@@ -9644,7 +9644,7 @@ For more details, see https://link.vuejs.org/feature-flags.`
       return teleportEnd ? hostNextSibling(teleportEnd) : el;
     };
     let isFlushing = false;
-    const render8 = (vnode, container, namespace2) => {
+    const render9 = (vnode, container, namespace2) => {
       let instance;
       if (vnode == null) {
         if (container._vnode) {
@@ -9690,9 +9690,9 @@ For more details, see https://link.vuejs.org/feature-flags.`
       );
     }
     return {
-      render: render8,
+      render: render9,
       hydrate: hydrate2,
-      createApp: createAppAPI(render8, hydrate2)
+      createApp: createAppAPI(render9, hydrate2)
     };
   }
   function resolveChildrenNamespace({ type, props }, currentNamespace) {
@@ -11422,12 +11422,12 @@ Component that was made reactive: `,
       window.devtoolsFormatters = [formatter];
     }
   }
-  function withMemo(memo, render8, cache3, index) {
+  function withMemo(memo, render9, cache3, index) {
     const cached = cache3[index];
     if (cached && isMemoSame(cached, memo)) {
       return cached;
     }
-    const ret = render8();
+    const ret = render9();
     ret.memo = memo.slice();
     ret.cacheIndex = index;
     return cache3[index] = ret;
@@ -16853,20 +16853,20 @@ Component that was made reactive: `,
       function splitSelector(selector) {
         return /^@/.test(selector) ? [selector] : selector.split(/,\s*/);
       }
-      function render8(selectors, spec2, target, isKeyframes) {
+      function render9(selectors, spec2, target, isKeyframes) {
         let local = [], isAt = /^@(\w+)\b/.exec(selectors[0]), keyframes = isAt && isAt[1] == "keyframes";
         if (isAt && spec2 == null) return target.push(selectors[0] + ";");
         for (let prop in spec2) {
           let value = spec2[prop];
           if (/&/.test(prop)) {
-            render8(
+            render9(
               prop.split(/,\s*/).map((part) => selectors.map((sel) => part.replace(/&/, sel))).reduce((a2, b2) => a2.concat(b2)),
               value,
               target
             );
           } else if (value && typeof value == "object") {
             if (!isAt) throw new RangeError("The value of a property (" + prop + ") should be a primitive value.");
-            render8(splitSelector(prop), value, local, keyframes);
+            render9(splitSelector(prop), value, local, keyframes);
           } else if (value != null) {
             local.push(prop.replace(/_.*/, "").replace(/[A-Z]/g, (l2) => "-" + l2.toLowerCase()) + ": " + value + ";");
           }
@@ -16875,7 +16875,7 @@ Component that was made reactive: `,
           target.push((finish && !isAt && !isKeyframes ? selectors.map(finish) : selectors).join(", ") + " {" + local.join(" ") + "}");
         }
       }
-      for (let prop in spec) render8(splitSelector(prop), spec[prop], this.rules);
+      for (let prop in spec) render9(splitSelector(prop), spec[prop], this.rules);
     }
     // :: () → string
     // Returns a string containing the module's CSS rules.
@@ -33584,6 +33584,51 @@ Component that was made reactive: `,
     };
   }
 
+  // sfc-script:/data/data/com.termux/files/home/RedDeadEdtior/src/components/Navbar.vue?type=script
+  var Navbar_default = {
+    props: {
+      isSidebarOpen: Boolean,
+      fileName: { type: String, default: "Unknown" }
+    },
+    emits: ["open-sidebar"]
+  };
+
+  // sfc-template:/data/data/com.termux/files/home/RedDeadEdtior/src/components/Navbar.vue?type=template
+  var _hoisted_1 = { class: "navbar" };
+  var _hoisted_2 = { class: "project-title" };
+  var _hoisted_3 = {
+    class: "menu-btn",
+    title: "Menu"
+  };
+  function render2(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
+    return openBlock(), createElementBlock("nav", _hoisted_1, [
+      !$props.isSidebarOpen ? (openBlock(), createElementBlock("button", {
+        key: 0,
+        class: "hamburger-btn",
+        title: "Buka Sidebar",
+        onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("open-sidebar"))
+      }, [
+        createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-bars" })
+      ])) : createCommentVNode("v-if", true),
+      createBaseVNode(
+        "p",
+        _hoisted_2,
+        toDisplayString($props.fileName),
+        1
+        /* TEXT */
+      ),
+      createBaseVNode("button", _hoisted_3, [
+        createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-ellipsis-vertical" })
+      ])
+    ]);
+  }
+
+  // src/components/Navbar.vue
+  Navbar_default.render = render2;
+  Navbar_default.__file = "src/components/Navbar.vue";
+  var Navbar_default2 = Navbar_default;
+
   // node_modules/@intlify/shared/dist/shared.mjs
   function warn3(msg, err) {
     if (typeof console !== "undefined") {
@@ -38551,12 +38596,12 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   };
 
   // sfc-template:/data/data/com.termux/files/home/RedDeadEdtior/src/components/ContextMenu.vue?type=template
-  var _hoisted_1 = {
+  var _hoisted_12 = {
     key: 0,
     class: "menu-header"
   };
-  var _hoisted_2 = ["onClick"];
-  function render2(_ctx, _cache, $props, $setup, $data, $options) {
+  var _hoisted_22 = ["onClick"];
+  function render3(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
     return $props.show ? (openBlock(), createElementBlock("div", {
       key: 0,
@@ -38570,7 +38615,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
       }, [
         $props.title ? (openBlock(), createElementBlock(
           "div",
-          _hoisted_1,
+          _hoisted_12,
           toDisplayString($props.title),
           1
           /* TEXT */
@@ -38592,7 +38637,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                 1
                 /* TEXT */
               )
-            ], 10, _hoisted_2);
+            ], 10, _hoisted_22);
           }),
           128
           /* KEYED_FRAGMENT */
@@ -38602,7 +38647,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   }
 
   // src/components/ContextMenu.vue
-  ContextMenu_default.render = render2;
+  ContextMenu_default.render = render3;
   ContextMenu_default.__file = "src/components/ContextMenu.vue";
   ContextMenu_default.__scopeId = "data-v-a87582a9";
   var ContextMenu_default2 = ContextMenu_default;
@@ -38646,14 +38691,14 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   };
 
   // sfc-template:/data/data/com.termux/files/home/RedDeadEdtior/src/components/Modal.vue?type=template
-  var _hoisted_12 = { class: "menu-header" };
-  var _hoisted_22 = { class: "modal-body" };
-  var _hoisted_3 = {
+  var _hoisted_13 = { class: "menu-header" };
+  var _hoisted_23 = { class: "modal-body" };
+  var _hoisted_32 = {
     key: 0,
     class: "modal-body"
   };
   var _hoisted_4 = { class: "modal-actions" };
-  function render3(_ctx, _cache, $props, $setup, $data, $options) {
+  function render4(_ctx, _cache, $props, $setup, $data, $options) {
     return $props.show ? (openBlock(), createElementBlock("div", {
       key: 0,
       class: "context-overlay",
@@ -38666,19 +38711,19 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
       }, [
         createBaseVNode(
           "div",
-          _hoisted_12,
+          _hoisted_13,
           toDisplayString($props.title),
           1
           /* TEXT */
         ),
         createBaseVNode(
           "div",
-          _hoisted_22,
+          _hoisted_23,
           toDisplayString($props.message),
           1
           /* TEXT */
         ),
-        $props.type === "prompt" ? (openBlock(), createElementBlock("div", _hoisted_3, [
+        $props.type === "prompt" ? (openBlock(), createElementBlock("div", _hoisted_32, [
           withDirectives(createBaseVNode(
             "input",
             {
@@ -38721,7 +38766,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   }
 
   // src/components/Modal.vue
-  Modal_default.render = render3;
+  Modal_default.render = render4;
   Modal_default.__file = "src/components/Modal.vue";
   Modal_default.__scopeId = "data-v-0084ed53";
   var Modal_default2 = Modal_default;
@@ -38761,11 +38806,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
         const folder = t3("new-folder");
         const title = type === "file" ? file : folder;
         currentAction.value = type;
-        showModal(
-          "prompt",
-          title,
-          ""
-        );
+        showModal("prompt", title, "");
       };
       const menuState = reactive({
         show: false,
@@ -38809,21 +38850,13 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
           const title = t3("title:rename-filename");
           const message = t3("rename-filename").replace(/\#\[name\]/, item.name);
           currentAction.value = "rename";
-          showModal(
-            "prompt",
-            title,
-            message
-          );
+          showModal("prompt", title, message);
         } else if (actionType === "delete") {
           const item = menuState.targetItem;
           const title = t3("title:delete-confirm");
           const message = t3("delete-confirm").replace(/\#\[name\]/, item.name);
           currentAction.value = "delete";
-          showModal(
-            "confirm",
-            title,
-            message
-          );
+          showModal("confirm", title, message);
         }
       };
       const renameBtn = t3("button:rename");
@@ -38850,9 +38883,9 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   };
 
   // sfc-template:/data/data/com.termux/files/home/RedDeadEdtior/src/components/Sidebar.vue?type=template
-  var _hoisted_13 = { class: "sidebar-wrapper" };
-  var _hoisted_23 = { class: "activity-bar" };
-  var _hoisted_32 = {
+  var _hoisted_14 = { class: "sidebar-wrapper" };
+  var _hoisted_24 = { class: "activity-bar" };
+  var _hoisted_33 = {
     class: "activity-item active",
     title: "Explorer"
   };
@@ -38872,7 +38905,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   };
   var _hoisted_122 = ["onClick"];
   var _hoisted_132 = { class: "item-info" };
-  var _hoisted_14 = { class: "icon" };
+  var _hoisted_142 = { class: "icon" };
   var _hoisted_15 = { class: "name" };
   var _hoisted_16 = ["onClick"];
   var _hoisted_17 = {
@@ -38886,7 +38919,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   var _hoisted_21 = { class: "name" };
   var _hoisted_222 = ["onClick"];
   var _hoisted_232 = ["onClick"];
-  var _hoisted_24 = { class: "item-info" };
+  var _hoisted_242 = { class: "item-info" };
   var _hoisted_25 = { class: "icon" };
   var _hoisted_26 = { class: "name" };
   var _hoisted_27 = ["onClick"];
@@ -38895,14 +38928,14 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   var _hoisted_30 = { class: "icon" };
   var _hoisted_31 = { class: "name" };
   var _hoisted_322 = ["onClick"];
-  function render4(_ctx, _cache, $props, $setup, $data, $options) {
+  function render5(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
     const _component_ContextMenu = resolveComponent("ContextMenu");
     const _component_Modal = resolveComponent("Modal");
-    return openBlock(), createElementBlock("div", _hoisted_13, [
+    return openBlock(), createElementBlock("div", _hoisted_14, [
       createCommentVNode(" Activity Bar "),
-      createBaseVNode("div", _hoisted_23, [
-        createBaseVNode("div", _hoisted_32, [
+      createBaseVNode("div", _hoisted_24, [
+        createBaseVNode("div", _hoisted_33, [
           createBaseVNode("span", _hoisted_42, [
             createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-folder" })
           ])
@@ -38963,7 +38996,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                       onClick: withModifiers(($event) => $setup.clickFolder(item.id), ["stop"])
                     }, [
                       createBaseVNode("div", _hoisted_132, [
-                        createBaseVNode("span", _hoisted_14, [
+                        createBaseVNode("span", _hoisted_142, [
                           createVNode(_component_font_awesome_icon, {
                             icon: $setup.isFolderOpen(item.id) ? "folder-open" : "folder"
                           }, null, 8, ["icon"])
@@ -39023,7 +39056,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
                                   class: normalizeClass(["item-file row-item", { active: child.id === $props.activeId }]),
                                   onClick: withModifiers(($event) => _ctx.$emit("select-file", child.id), ["stop"])
                                 }, [
-                                  createBaseVNode("div", _hoisted_24, [
+                                  createBaseVNode("div", _hoisted_242, [
                                     createBaseVNode("span", _hoisted_25, [
                                       createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-file-code" })
                                     ]),
@@ -39110,14 +39143,14 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   }
 
   // src/components/Sidebar.vue
-  Sidebar_default.render = render4;
+  Sidebar_default.render = render5;
   Sidebar_default.__file = "src/components/Sidebar.vue";
   Sidebar_default.__scopeId = "data-v-217863a4";
   var Sidebar_default2 = Sidebar_default;
 
   // sfc-script:/data/data/com.termux/files/home/RedDeadEdtior/src/App.vue?type=script
   var App_default = {
-    components: { Sidebar: Sidebar_default2 },
+    components: { Navbar: Navbar_default2, Sidebar: Sidebar_default2 },
     setup() {
       const editorContainer = ref(null);
       let view = null;
@@ -39155,6 +39188,10 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
         renameItem,
         deleteItem
       } = useWorkspace(loadFileContent);
+      const currentFileName = computed2(() => {
+        const activeFile = getActiveFile();
+        return activeFile ? activeFile.name : "No File Open";
+      });
       onMounted(async () => {
         await readWorkspaceStorage();
         const firstFile = workspaceItems.value.find(
@@ -39192,7 +39229,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
         createNewFile,
         createNewFolder,
         renameItem,
-        deleteItem
+        deleteItem,
+        currentFileName
       };
     }
   };
@@ -39202,8 +39240,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
     ref: "editorContainer",
     class: "editor-container"
   };
-  function render5(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
+  function render6(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_Navbar = resolveComponent("Navbar");
     const _component_Sidebar = resolveComponent("Sidebar");
     return openBlock(), createElementBlock(
       "div",
@@ -39211,14 +39249,11 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
         class: normalizeClass(["editor-wrap", { "sidebar-closed": !$setup.isSidebarOpen }])
       },
       [
-        !$setup.isSidebarOpen ? (openBlock(), createElementBlock("button", {
-          key: 0,
-          class: "open-sidebar-btn",
-          title: "Buka Sidebar",
-          onClick: _cache[0] || (_cache[0] = ($event) => $setup.isSidebarOpen = true)
-        }, [
-          createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-bars" })
-        ])) : createCommentVNode("v-if", true),
+        createVNode(_component_Navbar, {
+          "is-sidebar-open": $setup.isSidebarOpen,
+          "file-name": $setup.currentFileName,
+          onOpenSidebar: _cache[0] || (_cache[0] = ($event) => $setup.isSidebarOpen = true)
+        }, null, 8, ["is-sidebar-open", "file-name"]),
         createCommentVNode(" Di bagian template App.vue lo "),
         createVNode(_component_Sidebar, {
           items: $setup.workspaceItems,
@@ -39245,7 +39280,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   }
 
   // src/App.vue
-  App_default.render = render5;
+  App_default.render = render6;
   App_default.__file = "src/App.vue";
   var App_default2 = App_default;
 
@@ -41924,7 +41959,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
       }));
     };
   }
-  var render6 = function render7(iconDefinition) {
+  var render7 = function render8(iconDefinition) {
     var params = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     var _params$transform = params.transform, transform2 = _params$transform === void 0 ? meaninglessTransform : _params$transform, _params$symbol = params.symbol, symbol = _params$symbol === void 0 ? false : _params$symbol, _params$mask = params.mask, mask = _params$mask === void 0 ? null : _params$mask, _params$maskId = params.maskId, maskId = _params$maskId === void 0 ? null : _params$maskId, _params$classes = params.classes, classes = _params$classes === void 0 ? [] : _params$classes, _params$attributes = params.attributes, attributes = _params$attributes === void 0 ? {} : _params$attributes, _params$styles = params.styles, styles2 = _params$styles === void 0 ? {} : _params$styles;
     if (!iconDefinition) return;
@@ -41962,7 +41997,7 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
   var ReplaceElements = {
     mixout: function mixout2() {
       return {
-        icon: resolveIcons(render6)
+        icon: resolveIcons(render7)
       };
     },
     hooks: function hooks2() {
@@ -43402,6 +43437,11 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
     iconName: "trash",
     icon: [448, 512, [], "f1f8", "M136.7 5.9L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-8.7-26.1C306.9-7.2 294.7-16 280.9-16L167.1-16c-13.8 0-26 8.8-30.4 21.9zM416 144L32 144 53.1 467.1C54.7 492.4 75.7 512 101 512L347 512c25.3 0 46.3-19.6 47.9-44.9L416 144z"]
   };
+  var faEllipsisVertical = {
+    prefix: "fas",
+    iconName: "ellipsis-vertical",
+    icon: [128, 512, ["ellipsis-v"], "f142", "M64 144a56 56 0 1 1 0-112 56 56 0 1 1 0 112zm0 224c30.9 0 56 25.1 56 56s-25.1 56-56 56-56-25.1-56-56 25.1-56 56-56zm56-112c0 30.9-25.1 56-56 56s-56-25.1-56-56 25.1-56 56-56 56 25.1 56 56z"]
+  };
   var faFolderOpen = {
     prefix: "fas",
     iconName: "folder-open",
@@ -43455,7 +43495,8 @@ About how to use the Composition API mode, see https://vue-i18n.intlify.dev/guid
     faFolder,
     faFileCirclePlus,
     faFolderPlus,
-    faPlug
+    faPlug,
+    faEllipsisVertical
   );
   var app = createApp(App_default2);
   app.use(i18n_default);

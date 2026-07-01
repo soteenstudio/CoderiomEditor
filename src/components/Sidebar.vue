@@ -198,11 +198,7 @@ export default {
       const folder = t('new-folder');
       const title = type === 'file' ? file : folder;
       currentAction.value = type;
-      showModal(
-        'prompt',
-        title,
-        ''
-      );
+      showModal('prompt', title, '');
     };
 
     const menuState = reactive({
@@ -256,21 +252,13 @@ export default {
         const title = t('title:rename-filename');
         const message = t('rename-filename').replace(/\#\[name\]/, item.name);
         currentAction.value = 'rename';
-        showModal(
-          'prompt',
-          title,
-          message
-        );
+        showModal('prompt', title, message);
       } else if (actionType === 'delete') {
         const item = menuState.targetItem;
         const title = t('title:delete-confirm');
-        const message = t('delete-confirm').replace(/\#\[name\]/, item.name)
+        const message = t('delete-confirm').replace(/\#\[name\]/, item.name);
         currentAction.value = 'delete';
-        showModal(
-          'confirm',
-          title,
-          message
-        );
+        showModal('confirm', title, message);
       }
     };
 

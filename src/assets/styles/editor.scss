@@ -1,0 +1,15 @@
+.editor-container {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #1e1e1e !important;
+  
+  .cm-editor {
+    font-family: 'Fira Code', monospace !important;
+    font-size: 14px !important;
+    height: 100% !important;
+    background-color: #1e1e1e !important;
+  }
+}

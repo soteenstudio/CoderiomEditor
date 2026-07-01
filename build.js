@@ -1,5 +1,6 @@
 import esbuild from 'esbuild';
 import esbuildPluginVue3 from 'esbuild-plugin-vue3';
+import { sassPlugin } from 'esbuild-sass-plugin'
 
 async function runBuild() {
   try {
@@ -7,7 +8,10 @@ async function runBuild() {
       entryPoints: ['src/main.js'],
       bundle: true,
       outfile: 'www/bundle.js', // Output langsung ditaro di folder Capacitor
-      plugins: [esbuildPluginVue3()],
+      plugins: [
+        esbuildPluginVue3(),
+        sassPlugin()
+      ],
       define: {
         'process.env.NODE_ENV': '"production"',
         '__VUE_OPTIONS_API__': 'true',

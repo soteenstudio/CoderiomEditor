@@ -1,0 +1,16 @@
+.editor-wrap {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  background-color: #1e1e1e !important;
+}
+
+.main-content {
+  display: flex !important;
+  flex: 1 !important;
+  overflow: hidden !important;
+}
