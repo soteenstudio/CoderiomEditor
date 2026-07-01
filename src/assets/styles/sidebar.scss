@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .sidebar-wrapper {
   display: flex !important;
   height: 100% !important;
@@ -11,13 +13,13 @@
     width: 50px !important;
     min-width: 50px !important;
     height: 100% !important;
-    background-color: #222 !important;
+    background-color: $bg-dark !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     padding-top: 10px !important;
     box-sizing: border-box !important;
-    border-right: 1px solid #111 !important;
+    border-right: 1px solid $br-dark !important;
   }
 
   .top-actions {
@@ -47,19 +49,19 @@
   
   .activity-item.active {
     opacity: 1 !important;
-    border-left: 2px solid #007acc !important;
+    border-left: 2px solid $domain !important;
   }
   
   .act-icon {
     font-size: 18px !important;
-    color: #fff;
+    color: $text;
   }
   
   .sidebar {
     width: 200px !important;
     min-width: 200px !important;
     height: 100% !important;
-    background-color: #252526 !important;
+    background-color: $sidebar !important;
     display: flex !important;
     flex-direction: column !important;
     box-sizing: border-box !important;
@@ -74,20 +76,20 @@
     padding: 10px 12px !important;
     font-size: 11px !important;
     font-weight: 600 !important;
-    color: #bbbbbb !important;
+    color: $header !important;
     letter-spacing: 0.5px !important;
   }
   
   .close-btn {
     background: none !important;
     border: none !important;
-    color: #858585 !important;
+    color: $button !important;
     font-size: 14px !important;
     cursor: pointer !important;
   }
   
   .close-btn:hover {
-    color: #fff !important;
+    color: $text !important;
   }
   
   .sidebar-explorer {
@@ -103,15 +105,15 @@
     .sidebar-actions button {
       background: none !important;
       border: none !important;
-      color: #858585 !important;
+      color: $button !important;
       cursor: pointer !important;
       font-size: 13px !important;
       padding: 2px 4px !important;
     }
     
     .sidebar-actions button:hover {
-      color: #fff !important;
-      background-color: #37373d !important;
+      color: $text !important;
+      background-color: $hover-bg !important;
       border-radius: 3px !important;
     }
     
@@ -128,17 +130,17 @@
       padding: 4px 16px !important;
       cursor: pointer !important;
       font-size: 13px !important;
-      color: #cccccc !important;
+      color: $text-muted !important;
     }
     
     .item-file:hover, .item-folder:hover {
-      background-color: #2a2d2e !important;
+      background-color: $item-hover !important;
     }
     
     .item-file.active {
-      background-color: #37373d !important;
-      color: #ffffff !important;
-      outline: 1px solid #007acc !important;
+      background-color: $hover-bg !important;
+      color: $text !important;
+      outline: 1px solid $domain !important;
     }
     
     .icon {
@@ -152,8 +154,8 @@
     }
     
     .folder-selected {
-      background-color: rgba(0, 122, 204, 0.2) !important;
-      outline: 1px dashed #007acc;
+      background-color: rgba($domain, 0.2) !important;
+      outline: 1px dashed $domain;
     }
     .row-item {
       display: flex;
@@ -170,7 +172,7 @@
     .menu-trigger {
       background: none;
       border: none;
-      color: #ccc;
+      color: $text-muted;
       cursor: pointer;
       font-size: 14px;
       opacity: 0;
@@ -180,7 +182,7 @@
       opacity: 1;
     }
   }
-
+  
   .sidebar-addons {
     display: flex;
     flex-direction: column !important;
@@ -196,21 +198,21 @@
     .sidebar-actions-addons button {
       background: none !important;
       border: none !important;
-      color: #858585 !important;
+      color: $button !important;
       cursor: pointer !important;
       font-size: 13px !important;
       padding: 2px 4px !important;
     }
     
     .sidebar-actions-addons button:hover {
-      color: #fff !important;
-      background-color: #37373d !important;
+      color: $text !important;
+      background-color: $hover-bg !important;
       border-radius: 3px !important;
     }
     
     .search-box {
-      background-color: #252526 !important;
-      border: 1px solid #333 !important;
+      background-color: $sidebar !important;
+      border: 1px solid $border-search !important;
       border-radius: 6px;
       padding: 6px 4px;
       margin: 0 auto;
@@ -222,14 +224,14 @@
         outline: none;
         border: none;
         width: 97% !important;
-        color: #fff;
+        color: $text;
       }
     }
     
     .coming-soon {
       margin: auto;
       font-size: 13px !important;
-      color: #fff;
+      color: $text;
     }
   }
 }

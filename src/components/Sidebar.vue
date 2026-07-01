@@ -1,7 +1,10 @@
 <!-- src/components/Sidebar.vue -->
 <template>
   <div class="sidebar-wrapper">
-    <ActivityBar v-model="activeTab" />
+    <ActivityBar
+      :model-value="activeTab"
+      @update:model-value="activeTab = $event" 
+    />
 
     <aside class="sidebar">
       <Explorer
@@ -44,7 +47,7 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ActivityBar from './ActivityBar.vue';
 import ContextMenu from './ContextMenu.vue';
@@ -55,10 +58,12 @@ import Modal from './Modal.vue';
 export default {
   components: { ActivityBar, ContextMenu, Explorer, Addons, Modal },
   props: {
+    modelValue: { type: String, required: true },
     items: { type: Array, required: true },
     activeId: { type: String, required: true },
   },
   emits: [
+    'update:modelValue',
     'toggle-sidebar',
     'create-file',
     'create-folder',
@@ -71,9 +76,12 @@ export default {
     const selectedFolder = ref('');
     const { t } = useI18n();
 
-    const currentAction = ref('');
+    const activeTab = computed({
+      get: () => props.modelValue,
+      set: (val) => emit('update:modelValue', val)
+    });
 
-    const activeTab = ref('explorer');
+    const currentAction = ref('');
 
     const switchTab = (tab) => {
       activeTab.value = tab;
