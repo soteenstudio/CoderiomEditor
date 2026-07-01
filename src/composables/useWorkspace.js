@@ -1,6 +1,18 @@
 import { ref } from 'vue';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 
+// Tambahin fungsi ini di dalam useWorkspace
+const sortWorkspaceItems = (items) => {
+  return items.sort((a, b) => {
+    // 1. Folder selalu di atas (type 'directory')
+    if (a.type === 'directory' && b.type !== 'directory') return -1;
+    if (a.type !== 'directory' && b.type === 'directory') return 1;
+
+    // 2. Kalau sesama folder atau sesama file, urutin berdasarkan nama (alfabetis)
+    return a.name.localeCompare(b.name);
+  });
+};
+
 export function useWorkspace(loadFileContentCallback) {
   const activeFileId = ref('');
   const workspaceItems = ref([]);
@@ -27,14 +39,14 @@ export function useWorkspace(loadFileContentCallback) {
         directory: Directory.Documents,
       });
 
-      workspaceItems.value = result.files.map((file) => ({
+      workspaceItems.value = sortWorkspaceItems(result.files.map((file) => ({
         id: file.name,
         type: file.type,
         name: file.name,
         path: file.name,
         content: '',
         children: file.type === 'directory' ? [] : null,
-      }));
+      })));
     } catch (e) {
       console.error('Gagal membaca storage asli:', e);
     }
@@ -50,14 +62,14 @@ export function useWorkspace(loadFileContentCallback) {
       const updateChildren = (items) => {
         for (let item of items) {
           if (item.id === folderPath && item.type === 'directory') {
-            item.children = result.files.map((file) => ({
+            item.children = sortWorkspaceItems(result.files.map((file) => ({
               id: `${folderPath}/${file.name}`,
               type: file.type,
               name: file.name,
               path: `${folderPath}/${file.name}`,
               content: '',
               children: file.type === 'directory' ? [] : null,
-            }));
+            })));
             return true;
           }
           if (item.type === 'directory' && item.children) {
