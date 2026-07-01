@@ -16,6 +16,11 @@
         @explore-folder="(path) => $emit('explore-folder', path)"
         @toggle-sidebar="$emit('toggle-sidebar')"
       />
+      
+      <Addons
+        v-if="activeTab === 'addons'"
+        @toggle-sidebar="$emit('toggle-sidebar')"
+      />
     </aside>
 
     <ContextMenu
@@ -44,10 +49,11 @@ import { useI18n } from 'vue-i18n';
 import ActivityBar from './ActivityBar.vue';
 import ContextMenu from './ContextMenu.vue';
 import Explorer from './Explorer.vue';
+import Addons from './Addons.vue';
 import Modal from './Modal.vue';
 
 export default {
-  components: { ActivityBar, ContextMenu, Explorer, Modal },
+  components: { ActivityBar, ContextMenu, Explorer, Addons, Modal },
   props: {
     items: { type: Array, required: true },
     activeId: { type: String, required: true },

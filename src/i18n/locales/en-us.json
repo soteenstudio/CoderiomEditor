@@ -11,5 +11,7 @@
   "button:delete-confirm": "Delete",
   "button:cancel-confirm": "Cancel",
   "button:ok-confirm": "OK",
-  "title:explorer": "Explorer"
+  "title:explorer": "Explorer",
+  "title:addons": "Add-Ons Manager",
+  "coming-soon": "Coming soon."
 }

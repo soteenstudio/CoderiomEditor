@@ -169,6 +169,18 @@
       opacity: 1;
     }
   }
+
+  .sidebar-addons {
+    display: flex;
+    flex-direction: column !important;
+    height: 100%;
+    
+    .coming-soon {
+      margin: auto;
+      font-size: 13px !important;
+      color: #fff;
+    }
+  }
 }
 
 .sidebar-closed .sidebar-wrapper {

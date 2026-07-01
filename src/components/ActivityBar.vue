@@ -12,9 +12,9 @@
     </div>
     <div
       class="activity-item"
-      :class="{ active: modelValue === 'addon' }"
+      :class="{ active: modelValue === 'addons' }"
       title="Addons"
-      @click="$emit('update:modelValue', 'addon')"
+      @click="$emit('update:modelValue', 'addons')"
     >
       <span class="act-icon">
         <font-awesome-icon icon="fa-solid fa-plug" />

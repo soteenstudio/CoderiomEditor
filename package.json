@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@vue/eslint-config-prettier": "^10.2.0",
+    "cac": "^7.0.0",
     "esbuild": "^0.28.1",
     "esbuild-plugin-vue3": "^0.5.1",
     "esbuild-sass-plugin": "^3.7.0",

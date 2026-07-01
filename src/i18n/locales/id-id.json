@@ -11,5 +11,7 @@
   "button:delete-confirm": "Hapus",
   "button:cancel-confirm": "Batal",
   "button:ok-confirm": "OK",
-  "title:explorer": "Penjelajah"
+  "title:explorer": "Penjelajah",
+  "title:addons": "Pengelola Tambahan",
+  "coming-soon": "Segera hadir."
 }

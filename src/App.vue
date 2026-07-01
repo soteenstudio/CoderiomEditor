@@ -44,7 +44,7 @@ export default {
   setup() {
     const editorContainer = ref(null);
     let view = null;
-    const isSidebarOpen = ref(true);
+    const isSidebarOpen = ref(false);
 
     const loadFileContent = async (filePath) => {
       try {
