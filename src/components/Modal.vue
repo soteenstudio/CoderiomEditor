@@ -31,7 +31,11 @@
           :class="type === 'confirm' ? 'delete' : 'primary'"
           @click="handleAction('ok')"
         >
-          {{ type === 'confirm' ? t('button:delete-confirm') : t('button:ok-confirm') }}
+          {{
+            type === 'confirm'
+              ? t('button:delete-confirm')
+              : t('button:ok-confirm')
+          }}
         </button>
       </div>
     </div>
