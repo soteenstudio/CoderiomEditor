@@ -14,5 +14,11 @@
   "title:explorer": "Explorer",
   "title:addons": "Add-Ons Manager",
   "coming-soon": "Coming soon.",
-  "placeholder:search-addons": "Search Add-Ons..."
+  "placeholder:search-addons": "Search Add-Ons...",
+  "app:name": "Coderiom Editor",
+  "app:version": "Version {version}",
+  "app:license": "Licensed under ",
+  "app:powered-by": "Powered by:",
+  "app:view-license": "View License",
+  "app:documentation": "Documentation"
 }

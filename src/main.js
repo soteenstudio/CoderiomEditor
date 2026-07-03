@@ -21,6 +21,7 @@ import {
   faEllipsisVertical,
   faFilter,
   faGear,
+  faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -37,7 +38,8 @@ library.add(
   faPlug,
   faEllipsisVertical,
   faFilter,
-  faGear
+  faGear,
+  faArrowLeft
 );
 
 const app = createApp(App);

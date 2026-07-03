@@ -14,5 +14,11 @@
   "title:explorer": "Penjelajah",
   "title:addons": "Pengelola Tambahan",
   "coming-soon": "Segera hadir.",
-  "placeholder:search-addons": "Cari Tambahan..."
+  "placeholder:search-addons": "Cari Tambahan...",
+  "app:name": "Coderiom Editor",
+  "app:version": "Versi {version}",
+  "app:license": "Dilisensikan di bawah ",
+  "app:powered-by": "Dibuat dengan:",
+  "app:view-license": "Lihat lisensi",
+  "app:documentation": "Dokumentasi"
 }

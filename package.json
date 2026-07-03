@@ -1,4 +1,6 @@
 {
+  "name": "Coderiom Editor",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "lint": "eslint 'src/**/*.{vue,js,scss}'",

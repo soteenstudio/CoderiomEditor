@@ -44,7 +44,7 @@ import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { useWorkspace } from './composables/useWorkspace';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
-import SettingsModal from './components/SettingsModal.vue';
+import SettingsModal from './components/pages/settings/SettingsModal.vue';
 
 export default {
   components: { Navbar, Sidebar, SettingsModal },
