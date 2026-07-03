@@ -5,7 +5,7 @@ import { sassPlugin } from 'esbuild-sass-plugin'
 async function runBuild() {
   try {
     await esbuild.build({
-      entryPoints: ['src/main.js'],
+      entryPoints: ['src/main.ts'],
       bundle: true,
       outfile: 'www/bundle.js', // Output langsung ditaro di folder Capacitor
       plugins: [
