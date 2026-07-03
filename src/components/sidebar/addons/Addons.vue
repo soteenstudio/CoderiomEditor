@@ -20,7 +20,7 @@
 
 <script>
 import { useI18n } from 'vue-i18n';
-import SidebarHeader from './SidebarHeader.vue';
+import SidebarHeader from '../SidebarHeader.vue';
 
 export default {
   components: { SidebarHeader },

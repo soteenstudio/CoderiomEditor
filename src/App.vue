@@ -43,7 +43,7 @@ import { oneDark } from '@codemirror/theme-one-dark';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { useWorkspace } from './composables/useWorkspace';
 import Navbar from './components/Navbar.vue';
-import Sidebar from './components/Sidebar.vue';
+import Sidebar from './components/sidebar/Sidebar.vue';
 import SettingsModal from './components/pages/settings/SettingsModal.vue';
 
 export default {

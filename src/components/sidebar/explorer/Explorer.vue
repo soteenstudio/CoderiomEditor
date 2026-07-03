@@ -21,7 +21,7 @@
 <script>
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import SidebarHeader from './SidebarHeader.vue';
+import SidebarHeader from '../SidebarHeader.vue';
 import SidebarActions from './SidebarActions.vue';
 import FileTree from './FileTree.vue';
 

@@ -50,10 +50,10 @@
 import { ref, reactive, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ActivityBar from './ActivityBar.vue';
-import ContextMenu from './ContextMenu.vue';
-import Explorer from './Explorer.vue';
-import Addons from './Addons.vue';
-import Modal from './Modal.vue';
+import ContextMenu from '../ContextMenu.vue';
+import Explorer from './explorer/Explorer.vue';
+import Addons from './addons/Addons.vue';
+import Modal from '../Modal.vue';
 
 export default {
   components: { ActivityBar, ContextMenu, Explorer, Addons, Modal },
